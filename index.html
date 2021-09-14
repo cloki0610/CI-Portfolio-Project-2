@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>WOW Quiz - It's time to test your knowledge!</title>
 </head>
 <body>
-    
+    <!--Header, with a title and intro message-->
+    <header>
+        <h1 id="title" class="header">WOW Quiz</h1>
+        <p class="header">Answer all question with your knowing!</p>
+    </header>
+    <main>
+        <!--Get username by user input and display the welcome message-->
+        <div id="welcome-section">
+            <h2 id="wel-msg" class="welcome">Enter your name and begin!</h2>
+            <input type="text" name="username" id="username" class="welcome" placeholder="Enter your name here"><br>
+            <button id="startBtn" class="welcome">START</button>
+        </div>
+        <!--Display the question and answer buttons-->
+        <div id="question-section"></div>
+        <!--display the button to the next question or get the result-->
+        <div id="button-section">
+        </div>
+        <!--Display the current score-->
+        <div id="result-section"></div>
+    </main>
+    <!--Footer, including contact email and social media external link-->
+    <footer>
+        <div id="contact-section">C.Loki 2021</div>
+        <div id="social-network"></div>
+    </footer>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

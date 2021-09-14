@@ -1,0 +1,20 @@
+/* Clear all the default style*/
+*   {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+header{
+    background-color: skyblue;
+}
+
+#welcome-section {
+    background-color: darkorange;
+    height: 100px;
+}
+
+footer{
+    background-color: slateblue;
+    height: 100px;
+}
