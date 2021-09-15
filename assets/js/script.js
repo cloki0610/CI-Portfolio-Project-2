@@ -238,9 +238,9 @@ document.addEventListener("DOMContentLoaded", function() {
         let answersOutput = document.getElementById("answers");
         let currentAnswers = [];
         //set the new current question value
-        questionOutput.innerHTML = `<p>${questions[current - 1].question}<p/>`
+        questionOutput.innerHTML = `<p>${questions[current - 1].question}<p/>`;
         //use for loop to generate answers html
-        for(option in questions[current - 1].answers){
+        for(let option in questions[current - 1].answers){
             currentAnswers.push(
                 `<button class="answer" id="${option}">
                   ${questions[current - 1].answers[option]}
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
         //use another for loop add event listener use for/in will loop one more time
         let ansBtn = document.getElementsByClassName("answer");
         for(let i=0; i<ansBtn.length; i++){
-            ansBtn[i].addEventListener("click", () => {nextQuestion(ansBtn[i].id)});
+            ansBtn[i].addEventListener("click", () => {nextQuestion(ansBtn[i].id);});
         }
     }
     /**
