@@ -49,7 +49,7 @@ header{
     font-size: 2rem;
     padding: 0 5%;
     margin: 2%;
-    transition: opacity 0.5s;
+    animation: expand .5s ease-in-out;
 }
 #username{
     font-size: 2.4rem;
@@ -58,6 +58,7 @@ header{
     text-align: center;
     border-bottom: 1px solid #3a3a3a;
     margin: 5% 25%;
+    animation: expand .5s ease-in-out;
 }
 
 #username:hover{
@@ -71,13 +72,14 @@ header{
     font-family: 'VT323', monospace;
     font-size: 3rem;
     border-radius: 50px;
+    animation: expand .5s ease-in-out;
 }
 #startBtn:hover {
     color: #fafafa;
 }
 #hello-user {
     margin: 1%;
-    transition: opacity 0.5s;
+    animation: expand .5s ease-in-out;
 }
 /*  style the question section  */
 #question-section{
