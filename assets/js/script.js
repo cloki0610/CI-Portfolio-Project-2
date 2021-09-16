@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
             correctAnswer:"B"
         },
         {
-            question:"The Darkmoon Faire recieved it's biggest update, with it's own island and currency, with which WoW expansion?",
+            question:"The Darkmoon Faire move to it's own island and currency in which WoW expansion?",
             answers: {
                 A:"Legion",
                 B:"Catacalysm",
@@ -190,27 +190,33 @@ document.addEventListener("DOMContentLoaded", function() {
      * When user press the start button
      * the function will generate the welcome msg with username,
      * remove the input tag and start button,
-     * then begin a new quiz
+     * then display the welcome msg and begin a new quiz
     */
     startBtn.addEventListener("click", handleWelcome);
     function handleWelcome (){
         let username = document.getElementById("username");
-        let welcomeMsg = document.getElementById("wel-msg");
         if(username.value === ""){
             alert("Please enter your name!");
             return;
         }
-        welcomeMsg.innerHTML = `Nice to meet you, ${username.value}<br> now try answer all the questions!`;
+        if(username.value.length >= 10){
+            alert("Please enter a shorter name.");
+            return;
+        }
+        let helloUser = document.createElement("div");
+        helloUser.id = "hello-user";
+        helloUser.innerHTML = `Nice to meet you, ${username.value}. Now try answer all the questions!`;
         document.getElementById("username").remove();
+        document.getElementById("wel-msg").remove();
         document.getElementById("startBtn").removeEventListener('click', handleWelcome);
         document.getElementById("startBtn").remove();
+        welcomeContainer.appendChild(helloUser);
         startQuiz();
     }
     /**
-     * When new quiz begin, generate a new question array
-     * create a new question and answer tag with first question,
-     * if the question is last question, then show the submit button,
-     * if user press the button, new question will replace the current content
+     * When new quiz begin, sort the question array to randomize the question order
+     * then create the question and answer tag to store the new question
+     * when elements append, then call the showQuestion function
     */
     function startQuiz(){
         //sort the questions and use index 0-4 for a new quiz
@@ -230,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function() {
         showQuestion(1);
     }
     /**
-     * Take a integer and the question array as argument,
+     * Take a integer of current question as argument,
      * and replace the new question and answer to the current contents
     */
     function showQuestion(current){
@@ -239,6 +245,10 @@ document.addEventListener("DOMContentLoaded", function() {
         let currentAnswers = [];
         //set the new current question value
         questionOutput.innerHTML = `<p>${questions[current - 1].question}<p/>`;
+        //use while loop to clear old answers and their listeners
+        while(answersOutput.firstChild){
+            answersOutput.removeChild(answersOutput.firstChild);
+        }
         //use for loop to generate answers html
         for(let option in questions[current - 1].answers){
             currentAnswers.push(
@@ -249,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         //set the new answers value
         answersOutput.innerHTML = currentAnswers.join("");
-        //use another for loop add event listener use for/in will loop one more time
+        //use another for loop add event listener (use for/in will loop one more time)
         let ansBtn = document.getElementsByClassName("answer");
         for(let i=0; i<ansBtn.length; i++){
             ansBtn[i].addEventListener("click", () => {nextQuestion(ansBtn[i].id);});
@@ -273,9 +283,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     /**
-     * When press the next question button
-     * showQuestion() will be call
-     * and current
+     * Check the result valid or not
+     * If valid then check if the current question is last question or not
+     * if it is then call the submitQuiz function
+     * if not the last question then call showQuestion function to display next question
     */
    function nextQuestion(select){
        let current = parseInt(document.getElementById("currentQuestion").innerHTML);
@@ -291,10 +302,13 @@ document.addEventListener("DOMContentLoaded", function() {
         current++;
         document.getElementById("currentQuestion").innerHTML = current;
         showQuestion(current);
-        //if next question is last question, then replace a listener and text to the button
        }
    }
-
+   /**
+    * Check the finalScore display on the page and take it as variable
+    * Then remove all the text on page and replace with the result message
+    * and the retry button
+   */
    function submitQuiz(){
        //define the current score as final score
        let finalScore = parseInt(document.getElementById("score").innerHTML);
@@ -315,28 +329,30 @@ document.addEventListener("DOMContentLoaded", function() {
                resultMsg = "You got all the wrong answers. Maybe it is some special talent?";
                break;
            case 1:
-               resultMsg = "You only got one correct, <br>Seems that you're not interest in WoW.";
+               resultMsg = "You only got one correct, <br>Seems that you're not interest in WoW.<br>";
                break;
            case 2:
-               resultMsg = "You got two question correct! <br>Try again!";
+               resultMsg = "You got two question correct! <br>Not bad at all!<br>";
                break;
            case 3:
-               resultMsg = "You got three question correct! <br>Great!";
+               resultMsg = "You got three question correct! <br>Great!<br>";
                break;
            case 4:
-               resultMsg = "You got it all right but one! <br>Brilliant!";
+               resultMsg = "You got it all right but one! <br>Brilliant!<br>";
                break;
            case 5:
-               resultMsg = "Congratulations, <br>you got it all!";
+               resultMsg = "Congratulations, <br>you got it all!<br>";
                break;
            default:
                resultMsg = "Something worng!";
        }
        //display the final result and a retry button
-       resultContainer.innerHTML = `Your final score is ${finalScore}<br>` + resultMsg + "<br>Try again?<br><button id='retry'>RETRY</button>";
+       resultContainer.innerHTML = `<div id="end-result">Your final score is ${finalScore}<br><br>` + resultMsg + "<br>Try again?<br><button id='retry'>RETRY</button></div>";
        document.getElementById("retry").addEventListener('click', tryAgain);
    }
-
+   /**
+    * remove all the result elements and write back some html make the page as the beginning of the game
+   */
    function tryAgain(){
        //clear all result contents
         while(resultContainer.firstChild){
@@ -345,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function() {
        //display the welcome message and input column
        welcomeContainer.innerHTML = 
        `<h2 id="wel-msg" class="welcome">Enter your name and begin!</h2>
-       <input type="text" name="username" id="username" class="welcome" placeholder="Enter your name here"><br>
+       <input type="text" name="username" id="username" class="welcome" placeholder="Enter your name here">
        <button id="startBtn" class="welcome">START</button>`;
        document.getElementById("startBtn").addEventListener("click", handleWelcome);
    }

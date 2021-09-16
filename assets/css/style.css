@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=VT323&display=swap');
+
 /* Clear all the default style*/
 *   {
     margin: 0;
@@ -5,20 +7,232 @@
     border: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* set defautl font-size and color*/
 body {
     font-size: 1rem;
+    font-family: 'VT323', monospace;
+    color: #3a3a3a;
 }
-
+/*  style header  */
 header{
-    background-color: skyblue;
-}
-
-#welcome-section {
     background-color: darkorange;
-    height: 100px;
+    border-bottom: 5px solid #3a3a3a;
+    padding-bottom: 3%;
+    height: 150px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+}
+/*  style welcome-section  */
+#welcome-section {
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+}
+#wel-msg{
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    padding: 0 5%;
+    margin: 2%;
+}
+#username{
+    font-size: 2.4rem;
+    font-family: 'VT323', monospace;
+    width: 40%;
+    text-align: center;
+    border-bottom: 1px solid #3a3a3a;
+    margin: 5% 25%;
 }
 
+#username:hover{
+    background-color: darkorange;
+}
+
+#startBtn{
+    background-color: darkorange;
+    width: 160px;
+    height: 80px;
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    border-radius: 50px;
+}
+#startBtn:hover {
+    color: #fafafa;
+}
+#hello-user {
+    margin: 1%;
+}
+/*  style the question section  */
+#question-section{
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1%;
+}
+/*  style question and answer tag */
+#question {
+    font-size: 2.2rem;
+}
+
+#answers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*  style answer button*/
+.answer{
+    background-color: darkorange;
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    width: 50%;
+    height: 40px;
+    margin: 1%;
+}
+
+.answer:hover{
+    color: #fafafa;
+}
+/*  style the result section  */
+#result-section{
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#end-result{
+    position: relative;
+    left:25%;
+    text-align: center;
+    font-size: 2.6rem;
+    width: 50%;
+}
+
+#end-result button {
+    background-color: #3a3a3a;
+    margin-top: 5%;
+    color: darkorange;
+    font-size: 2.6rem;
+    border-radius: 50px;
+    width: 160px;
+    height: 80px;
+}
+
+#end-result button:hover {
+    background-color: darkorange;
+    color: #fafafa;
+}
+/*  style footer  */
 footer{
-    background-color: slateblue;
-    height: 100px;
+    height: 80px;
+    width: 100%;
+    background-color: #3a3a3a;
+    display: inline-flex;
+    position: fixed;
+    bottom: 0;
+}
+
+#contacts   {
+    width: 50%;
+    color: #fafafa;
+}
+
+#contacts p{
+    font-size: 160%;
+}
+
+#contacts a:hover{
+    color: darkorange;
+}
+
+#social-networks    {
+    width: 50%;
+    color: #fafafa;
+}
+
+#social-networks ul{
+    list-style-type: none;
+}
+
+#social-networks ul li  {
+    display: inline-block;
+    margin: 0 40px;
+    font-size: 280%;
+}
+
+#social-networks ul li:hover{
+    color: darkorange;
+}
+
+/*  media queries  */
+/*  for larger to medium screen size from 900px wide and down    */
+@media screen and (max-width: 900px) {
+    /*   fix header     */
+    header{
+        font-size: 2rem;
+    }
+    /*  fix answer buttons  */
+    .answer{
+        width: 75%;
+    }
+    /*  fix footer  */
+    footer {
+        position: relative;
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    #contacts   {
+        width: 100%;
+    }
+
+    #social-networks    {
+        width: 100%;
+    }
+}
+/*  for larger to medium screen size from 750px wide and down    */
+@media screen and (max-width: 750px) {
+    /*  fix username input*/
+    #username{
+        width: 85%;
+        margin: 50px 0 ;
+    }
+    /*  fix answer buttons  */
+    .answer{
+        width: 95%;
+        font-size: 1.2rem;
+    }
+}
+
+/*  for larger to medium screen size from 500px wide and down    */
+@media screen and (max-width: 500px) {
+    /*  fix header  */
+    header{
+        font-size: 1.8rem;
+    }
+    /*  fix welcome section  */
+    #welcome-section{
+        margin-bottom: 50px;
+    }
+    #wel-msg{
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+    }
+    /*  fix answer buttons  */
+    .answer{
+        font-size: 1.3rem;
+    }
+    /*  fix final result message  */
+    #end-result{
+        left: 10%;
+        width: 80%;
+        font-size: 1.6rem;
+    }
+
 }
