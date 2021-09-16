@@ -39,6 +39,7 @@ header{
     font-size: 2rem;
     padding: 0 5%;
     margin: 2%;
+    transition: opacity 0.5s;
 }
 #username{
     font-size: 2.4rem;
@@ -66,6 +67,7 @@ header{
 }
 #hello-user {
     margin: 1%;
+    transition: opacity 0.5s;
 }
 /*  style the question section  */
 #question-section{
@@ -76,6 +78,7 @@ header{
 /*  style question and answer tag */
 #question {
     font-size: 2.2rem;
+    transition: opacity 0.5s;
 }
 
 #answers{
@@ -92,6 +95,7 @@ header{
     width: 50%;
     height: 40px;
     margin: 1%;
+    transition: opacity 0.5s;
 }
 
 .answer:hover{
@@ -110,6 +114,7 @@ header{
     text-align: center;
     font-size: 2.6rem;
     width: 50%;
+    transition: opacity 0.5s;
 }
 
 #end-result button {
@@ -120,6 +125,7 @@ header{
     border-radius: 50px;
     width: 160px;
     height: 80px;
+    transition: opacity 0.5s;
 }
 
 #end-result button:hover {
@@ -132,7 +138,7 @@ footer{
     width: 100%;
     background-color: #3a3a3a;
     display: inline-flex;
-    position: fixed;
+    position: relative;
     bottom: 0;
 }
 
