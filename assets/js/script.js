@@ -193,6 +193,44 @@ document.addEventListener("DOMContentLoaded", function() {
      * then display the welcome msg and begin a new quiz
     */
     startBtn.addEventListener("click", handleWelcome);
+    document.addEventListener("keydown", enterKey);
+    //keydown event
+    //enter for start a new game
+    function enterKey (event){
+        if(event.key === "Enter"){
+            handleWelcome();
+        }
+    }
+    //enter for restart
+    function retryKey (event){
+        if(event.key === "Enter"){
+            tryAgain();
+        }
+    }
+    //press a,b,c,d(uppper or lower case) to press answer
+    function answerKey (event){
+        switch(event.key){
+            case 'a':
+            case 'A':
+                nextQuestion('A');
+                break;
+            case 'b':
+            case 'B':
+                nextQuestion('B');
+                break;
+            case 'c':
+            case 'C':
+                nextQuestion('C');
+                break;
+            case 'd':
+            case 'D':
+                nextQuestion('D');
+                break;
+            default:
+                return;
+        }
+    }
+    //trigger when button press or press enter
     function handleWelcome (){
         let username = document.getElementById("username");
         if(username.value === ""){
@@ -209,6 +247,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("username").remove();
         document.getElementById("wel-msg").remove();
         document.getElementById("startBtn").remove();
+        document.removeEventListener("keydown", enterKey);
         welcomeContainer.appendChild(helloUser);
         startQuiz();
     }
@@ -231,6 +270,8 @@ document.addEventListener("DOMContentLoaded", function() {
         //append all the text to question section
         quizContainer.appendChild(questionDisplay);
         quizContainer.appendChild(answersDisplay);
+        //add a keydown event to input ansers
+        document.addEventListener("keydown", answerKey);
         //call showQuestion to display a new question
         showQuestion(1);
     }
@@ -312,6 +353,8 @@ document.addEventListener("DOMContentLoaded", function() {
        //define the current score as final score
        let finalScore = parseInt(document.getElementById("score").innerHTML);
        let resultMsg = "";
+       //remove the answerKey listener
+       document.removeEventListener("keydown", answerKey);
        //clear the question and result section
        while(quizContainer.firstChild){
            quizContainer.removeChild(quizContainer.firstChild);
@@ -348,6 +391,7 @@ document.addEventListener("DOMContentLoaded", function() {
        //display the final result and a retry button
        resultContainer.innerHTML = `<div id="end-result">Your final score is ${finalScore}<br><br>` + resultMsg + "<br>Try again?<br><button id='retry'>RETRY</button></div>";
        document.getElementById("retry").addEventListener('click', tryAgain);
+       document.addEventListener("keydown", retryKey);
    }
    /**
     * remove all the result elements and write back some html make the page as the beginning of the game
@@ -357,11 +401,14 @@ document.addEventListener("DOMContentLoaded", function() {
         while(resultContainer.firstChild){
             resultContainer.removeChild(resultContainer.firstChild);
         }
+       //remove the retry key listener
+       document.removeEventListener("keydown", retryKey);
        //display the welcome message and input column
        welcomeContainer.innerHTML = 
        `<h2 id="wel-msg" class="welcome">Enter your name and begin!</h2>
        <input type="text" name="username" id="username" class="welcome" placeholder="Enter your name here">
        <button id="startBtn" class="welcome">START</button>`;
        document.getElementById("startBtn").addEventListener("click", handleWelcome);
+       document.addEventListener("keydown", enterKey);
    }
 });
