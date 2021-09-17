@@ -193,8 +193,8 @@ footer{
 }
 
 /*  media queries  */
-/*  for larger to medium screen size from 900px wide and down    */
-@media screen and (max-width: 900px) {
+/*  for larger to medium screen size from 950px wide and down    */
+@media screen and (max-width: 950px) {
     /*   fix header     */
     header{
         font-size: 2rem;
