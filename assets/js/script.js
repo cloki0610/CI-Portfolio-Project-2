@@ -1,4 +1,6 @@
+//add event listener to let the script run after the html loaded
 document.addEventListener("DOMContentLoaded", function() {
+    //questions will be use
     const questions = [
         {
             question:"What is the Human starting zone?",
@@ -181,17 +183,13 @@ document.addEventListener("DOMContentLoaded", function() {
             correctAnswer:"D"
         }
     ];
+    //define selectors
     const startBtn = document.getElementById("startBtn");
     const quizContainer = document.getElementById("question-section");
     const resultContainer = document.getElementById("result-section");
     const welcomeContainer = document.getElementById("welcome-section");
     
-    /**
-     * When user press the start button
-     * the function will generate the welcome msg with username,
-     * remove the input tag and start button,
-     * then display the welcome msg and begin a new quiz
-    */
+    //add event listener to start button and a keydown to start the game
     startBtn.addEventListener("click", handleWelcome);
     document.addEventListener("keydown", enterKey);
     //keydown event
@@ -230,7 +228,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
         }
     }
-    //trigger when button press or press enter
+    /**
+     * When user press the start button or press enter
+     * the function will generate the welcome msg with username,
+     * remove the input tag and start button,
+     * then display the welcome msg and begin a new quiz
+    */
     function handleWelcome (){
         let username = document.getElementById("username");
         if(username.value === ""){
