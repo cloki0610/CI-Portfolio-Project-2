@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function() {
                resultMsg = "You got all the wrong answers. Maybe it is some special talent?";
                break;
            case 1:
-               resultMsg = "You only got one correct, <br>Seems that you're not interest in WoW.<br>";
+               resultMsg = "You only got one correct, <br>Seems that you're not interested in WoW.<br>";
                break;
            case 2:
                resultMsg = "You got two question correct! <br>Not bad at all!<br>";

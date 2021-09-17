@@ -139,7 +139,7 @@ header{
     background-color: #3a3a3a;
     margin-top: 5%;
     color: darkorange;
-    font-size: 2.6rem;
+    font-size: 2rem;
     border-radius: 50px;
     width: 160px;
     height: 80px;
@@ -156,17 +156,22 @@ footer{
     width: 100%;
     background-color: #3a3a3a;
     display: inline-flex;
-    position: relative;
+    position: fixed;
     bottom: 0;
+}
+
+footer h2 {
+    font-size: 160%;
 }
 
 #contacts   {
     width: 50%;
+    padding-left: 5%;
     color: #fafafa;
 }
 
 #contacts p{
-    font-size: 120%;
+    box-sizing: border-box;
 }
 
 #contacts a:hover{
@@ -184,14 +189,33 @@ footer{
 
 #social-networks ul li  {
     display: inline-block;
-    margin: 0 40px;
-    font-size: 280%;
+    margin: 0 25px;
+    font-size: 240%;
 }
 
 #social-networks ul li:hover{
     color: darkorange;
 }
+/*  404.html  */
+#error {
+    font-size: 2.6rem;
+    text-align: center;
+}
 
+#turnback {
+    background-color: #3a3a3a;
+    margin-top: 5%;
+    color: darkorange;
+    font-size: 1.6rem;
+    border-radius: 50px;
+    width: 20%;
+    height: 80px;
+}
+
+#turnback:hover {
+    background-color: darkorange;
+    color: #fafafa;
+}
 /*  media queries  */
 /*  for larger to medium screen size from 950px wide and down    */
 @media screen and (max-width: 950px) {
@@ -199,9 +223,32 @@ footer{
     header{
         font-size: 2rem;
     }
+
+    /*  welcome section  */
+    #startBtn {
+        margin-top: 10%;
+    }
+    /*  question section  */
+    #question{
+        margin: 5% 0;
+    }
+
+    #answers{
+        margin: 5% 0;
+    }
     /*  fix answer buttons  */
     .answer{
         width: 75%;
+        margin-bottom: 5%;
+    }
+    /*  fix result section*/
+    #end-result{
+        left:0;
+        width: 90%;
+        margin: 0 5%;
+    }
+    #end-result button {
+        font-size: 1.3rem;
     }
     /*  fix footer  */
     footer {
@@ -212,12 +259,29 @@ footer{
         line-height: 40px;
     }
 
+    footer h2 {
+        font-size: 2.6rem;
+    }
+
     #contacts   {
         width: 100%;
+        padding-left: 0;
+        font-size: 1.6rem;
     }
 
     #social-networks    {
         width: 100%;
+    }
+
+    /*  404.html  */
+    #error{
+        font-size: 1.8rem;
+    }
+
+    #turnback{
+        margin-top: 15%;
+        margin-bottom: 15%;
+        font-size: 1.8rem;
     }
 }
 /*  for larger to medium screen size from 750px wide and down    */
@@ -230,7 +294,14 @@ footer{
     /*  fix answer buttons  */
     .answer{
         width: 95%;
-        font-size: 1.2rem;
+    }
+    /* 404.html  */
+    #error{
+        font-size: 1.4rem;
+    }
+
+    #turnback{
+        font-size: 1.4rem;
     }
 }
 
@@ -248,15 +319,22 @@ footer{
         font-size: 1.4rem;
         margin-bottom: 25px;
     }
+    #username {
+        font-size: 1.4rem;
+    }
+    #username::placeholder{
+        font-size: 1.4rem;
+    }
     /*  fix answer buttons  */
     .answer{
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     /*  fix final result message  */
     #end-result{
-        left: 10%;
-        width: 80%;
         font-size: 1.6rem;
     }
-
+    /* 404.html  */
+    #turnback{
+        width: 40%;
+    }
 }
