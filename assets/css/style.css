@@ -23,9 +23,15 @@ body {
     from {
       transform: scale(0);
       opacity: 0;
-      background: #5470B0;
+      background: darkorange;
     }
-  }
+}
+
+@keyframes switch {
+    from {
+        opacity: 0;
+    }
+}
 
 /*  style header  */
 header{
@@ -79,7 +85,7 @@ header{
 }
 #hello-user {
     margin: 1%;
-    animation: expand .5s ease-in-out;
+    animation: switch .5s;
 }
 /*  style the question section  */
 #question-section{
@@ -88,9 +94,9 @@ header{
     padding: 1%;
 }
 /*  style question and answer tag */
-#question {
+#current-question {
     font-size: 2.2rem;
-    animation: expand .5s ease-in-out;
+    animation: switch .5s;
 }
 
 #answers{
@@ -107,7 +113,7 @@ header{
     width: 50%;
     height: 40px;
     margin: 1%;
-    animation: expand .5s ease-in-out;
+    animation: switch .5s;
 }
 
 .answer:hover{

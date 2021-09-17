@@ -208,7 +208,6 @@ document.addEventListener("DOMContentLoaded", function() {
         helloUser.innerHTML = `Nice to meet you, ${username.value}. Now try answer all the questions!`;
         document.getElementById("username").remove();
         document.getElementById("wel-msg").remove();
-        document.getElementById("startBtn").removeEventListener('click', handleWelcome);
         document.getElementById("startBtn").remove();
         welcomeContainer.appendChild(helloUser);
         startQuiz();
@@ -224,11 +223,11 @@ document.addEventListener("DOMContentLoaded", function() {
         //create two new tag for question section and button section
         let questionDisplay = document.createElement("div");
         let answersDisplay = document.createElement("div");
+        questionDisplay.id =  "question";
+        answersDisplay.id = "answers";
         //new tag with result section
         resultContainer.innerHTML = `<p>Your score: <span id="score">0</span></p>
         <p>Question <span id="currentQuestion">1</span> of <span id="totalQuest">5</span></p>`;
-        questionDisplay.id =  "question";
-        answersDisplay.id = "answers";
         //append all the text to question section
         quizContainer.appendChild(questionDisplay);
         quizContainer.appendChild(answersDisplay);
@@ -244,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let answersOutput = document.getElementById("answers");
         let currentAnswers = [];
         //set the new current question value
-        questionOutput.innerHTML = `<p>${questions[current - 1].question}<p/>`;
+        questionOutput.innerHTML = `<p id="current-question">${questions[current - 1].question}<p/>`;
         //use while loop to clear old answers and their listeners
         while(answersOutput.firstChild){
             answersOutput.removeChild(answersOutput.firstChild);
