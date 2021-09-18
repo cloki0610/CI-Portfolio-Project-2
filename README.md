@@ -5,12 +5,12 @@ You can click [this link](https://cloki0610.github.io/CI-Portfolio-Project-2/) t
 ## Features
 ### Existing Feature
 #### index.html
-![index.html screenshoot]()
+![index.html screenshoot](readme-img/index_sc.png)
 #### 404.html
-![404.html screenshoot]()
+![404.html screenshoot](readme-img/404_sc.png)
 A page for invalid links in this website.
 This page contain a header and footer as index.html, 
-error messages and a return button to return previous page.
+error messages and a return button to redirect user to previous page.
 
 ### Feature left to be implement
 * A user input form to let user add customer question to the quiz game.
