@@ -1,6 +1,6 @@
 # World of Warcraft Quiz game
 # Milestone Project 2
-
+You can click ![this link]() to the living website
 ## Features
 ### Existing Feature
 ### Feature left to be implement

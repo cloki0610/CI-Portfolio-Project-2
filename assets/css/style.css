@@ -252,7 +252,7 @@ footer h2 {
     }
     /*  fix footer  */
     footer {
-        position: relative;
+        position: static;
         height: auto;
         flex-direction: column;
         text-align: center;
