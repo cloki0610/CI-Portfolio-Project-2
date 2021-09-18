@@ -252,21 +252,19 @@ footer h2 {
     }
     /*  fix footer  */
     footer {
-        position: static;
-        height: auto;
+        height: 20%;
         flex-direction: column;
         text-align: center;
-        line-height: 40px;
     }
 
     footer h2 {
-        font-size: 2.6rem;
+        font-size: 1.8rem;
     }
 
     #contacts   {
         width: 100%;
         padding-left: 0;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     #social-networks    {
@@ -309,7 +307,7 @@ footer h2 {
 @media screen and (max-width: 500px) {
     /*  fix header  */
     header{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     /*  fix welcome section  */
     #welcome-section{

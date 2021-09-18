@@ -1,10 +1,20 @@
 # World of Warcraft Quiz game
 # Milestone Project 2
-You can click ![this link]() to the living website
+![screen-capture]()
+You can click [this link](https://cloki0610.github.io/CI-Portfolio-Project-2/) to the living website.
 ## Features
 ### Existing Feature
-### Feature left to be implement
+#### index.html
+![index.html screenshoot]()
+#### 404.html
+![404.html screenshoot]()
+A page for invalid links in this website.
+This page contain a header and footer as index.html, 
+error messages and a return button to return previous page.
 
+### Feature left to be implement
+* A user input form to let user add customer question to the quiz game.
+* Put all the questions to a external datebase.
 ## Testing
 ### Solved Bugs
 ### Validator Testing
