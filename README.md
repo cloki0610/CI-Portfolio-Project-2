@@ -38,6 +38,7 @@ error messages and a return button to redirect user to previous page.
 ### Solved Bugs
 ### Validator Testing
 ### Unfixed Bugs
+Some offset issues still extist, but I have try my best to solve it.
 
 ## Deployment
 The website use git for version control, and deploy in Github by following step:
