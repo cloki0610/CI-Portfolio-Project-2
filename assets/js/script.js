@@ -408,7 +408,7 @@ document.addEventListener("DOMContentLoaded", function() {
        document.removeEventListener("keydown", retryKey);
        //display the welcome message and input column
        welcomeContainer.innerHTML = 
-       `<h2 id="wel-msg" class="welcome">Enter your name and begin!</h2>
+       `<h2 id="wel-msg" class="welcome"><label for="username">Enter your name and begin!</label></h2>
        <input type="text" name="username" id="username" class="welcome" placeholder="Enter your name here">
        <button id="startBtn" class="welcome">START</button>`;
        document.getElementById("startBtn").addEventListener("click", handleWelcome);

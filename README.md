@@ -1,46 +1,91 @@
 # World of Warcraft Quiz game
 # Milestone Project 2
-![screen-capture](readme-img/screenshot.png)
-You can click [this link](https://cloki0610.github.io/CI-Portfolio-Project-2/) to the living website.
-## Purpose
+![screen-capture](readme-img/screenshot_sc.png)
+Active website: https://cloki0610.github.io/CI-Portfolio-Project-2/
+You can also click [here](https://cloki0610.github.io/CI-Portfolio-Project-2/) to the living website.
+## **Purpose**
 This website provide a simple question quiz game 
-to test the user knowledge about World of Warcraft,
-another famous MMORPG in the world.
-User will answer five random question 
-and take the final score that shows how much they know about the game.
+
+to test the user knowledge about World of Warcraft, another famous MMORPG in the world.
+
+User will answer five random question and take the final score that shows how much they know about the game.
+
 User can play the game with mouse or by keyboard.
-## Features
-### Existing Feature
-The following part concluded two pages, 
-index.html for the functional quiz game,
-and 404.html for the error page
-#### index.html
-##### Welcome page
+## **Features**
+### **Existing Feature**
+The following website concluded two pages, 
+* index.html for the functional quiz game,
+* 404.html for the error page.
+#### **index.html**
+##### **Header**
+A simply header shows the title to let user know what he will play.
+##### **Welcome section**
 ![index.html screenshoot](readme-img/index_sc.png)
-* 
-##### Quiz in progress
+The first part of script in handleWelcome() contain three elements:
+* Label - a descriptive label to let user know what he should do.
+* Input field  - to let user input a username.
+* 'START' button -  to begin a new quiz.
+
+User can press the start button or press enter to begin a new game.
+
+If user begin a new game without user name, a warning alert will appear.
+
+Or if user input a name more than 10 character, another notification will let user know they should input a shorter name.
+##### **Quiz in progress**
 ![A screenshot of the game in progress](readme-img/inprogress_sc.png)
-* 
-##### Show final result
+Current part of script in startQuiz() contain four elements:
+* Welcome message - a line of text to display welecome message with the user name entered by user.
+* Question - a line of text to display the current question
+* Answers - four buttons with four possible answers 
+* current results - display current answer and how may question left.
+
+When user begin a new quiz game, the script will take the username input , 
+
+remove the DOM display in welcome section and show a welcome message with the input text.
+
+Then the script will sort the question array to randomize the questions.
+
+After that the script will call another function to show the first question in array with 4 possible answer show as button.
+
+User can choose the answer by press the buttons or press 'a', 'b', 'c', 'd' on the keyboard(case insensitive).
+
+When user choose their answer, the script will call the nextQuestion function to check their answer by checkAnswer() function and display the new current score on the result section.
+
+If current question is the last question, the script will move to final result section.
+##### **Show final result**
 ![A screenshot of final result](readme-img/result_sc.png)
-* 
-#### 404.html
+Current part of script in submitQuiz() contain two elements:
+* The final score with a result message
+* A try again button to restart a new quiz game
+
+First, the script will remove all the previous elements and take the score as variable.
+
+Then the script will display the final score with specific message base on their score,
+
+and display 'Try again' message with a retry button beneath the result messages.
+
+When user press the button or press 'Enter' on the keyboard,
+
+the script will remove all the DOM and display the welcome section as the beginning of the game.
+#### **404.html**
 ![404.html screenshoot](readme-img/404_sc.png)
 A page for invalid links in this website.
-This page contain a header and footer as index.html, 
+
+This page contain a header and footer as index.html,
+
 error messages and a return button to redirect user to previous page.
 
-### Feature left to be implement
+### **Feature left to be implement**
 * A user input form to let user add customer question to the quiz game.
 * Put all the questions to a external datebase.
 
-## Testing
-### Solved Bugs
-### Validator Testing
-### Unfixed Bugs
+## **Testing**
+### **Solved Bugs**
+### **Validator Testing**
+### **Unfixed Bugs**
 Some offset issues still extist, but I have try my best to solve it.
 
-## Deployment
+## **Deployment**
 The website use git for version control, and deploy in Github by following step:
 
 * This website create from Code Institue [template for Gitpod](https://github.com/Code-Institute-Org/gitpod-full-template).
@@ -50,25 +95,25 @@ The website use git for version control, and deploy in Github by following step:
 * In the Page section I click the dropdown list under "Scource" and select "main".
 * At last I deploy the website after press the "Save" button.
 
-## Credit:
-### Content
+## **Credit:**
+### **Content**
 * https://quizizz.com/admin/quiz/5bacebf0def5440019d49e0f/world-of-warcraft-trivia-moderate-difficulty
 All the question in this game come from this quiz test.
-### Media
+### **Media**
 * https://www.reddit.com/r/wow/comments/906m3p/bfa_icon_for_wow/
 The icon shortcut in this website come from reddit.
-### Code
+### **Code**
 * https://www.sitepoint.com/simple-javascript-quiz/
 Through this turtorial I get the basic idea about how this game functional,
 It help me to make up my Idea to create my own quiz game.
 * https://codepen.io/ericwshea/pen/EyzZQg
 I use this codepen work in my website when I'm stuck about CSS animation after a new DOM added to the page.
-### Tools
+### **Tools**
 * Chrome Lighthouse and Chrome Developer Tools
 * HTML - W3C Validator
 * CSS - Jigsaw Validator
 * Gitpod
 * Github
 
-### Acknowledgment
+### **Acknowledgment**
 Again, another sincerely thanks to my mentor Daisy McGirr for all support and guidance in the process.
