@@ -4,9 +4,7 @@
 Active website: https://cloki0610.github.io/CI-Portfolio-Project-2/
 You can also click [here](https://cloki0610.github.io/CI-Portfolio-Project-2/) to the living website.
 ## **Purpose**
-This website provide a simple question quiz game 
-
-to test the user knowledge about World of Warcraft, another famous MMORPG in the world.
+This website provide a simple question quiz game to test the user knowledge about World of Warcraft, another famous MMORPG in the world.
 
 User will answer five random question and take the final score that shows how much they know about the game.
 
@@ -80,10 +78,34 @@ error messages and a return button to redirect user to previous page.
 * Put all the questions to a external datebase.
 
 ## **Testing**
-### **Solved Bugs**
+### **Functional Test**
+* Username input is functional, if input is null or more than 10 character, the script will show correct alert message.
+* Answer buttons are all functional, and count the score correctly.
+* The final result shows the correct score and the correct message base on the final score.
+* The retry button correctly back to the welcome section.
+* The button in 404.html correctly back to previous page. 
+### **Responsive Design**
+* All responsive design are seems right in place. 
+I used google DevTools to check different size of screens and their responsive design.
 ### **Validator Testing**
+I use the following validator for testing:
+* [HTML - W3C HTML Validator](https://validator.w3.org/)
+* [CSS - Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
+* [JSHint](https://jshint.com/)
+#### HTTP test
+All script have been tested without important error.
+![HTTP test result](readme-img/html_test.png)
+#### CSS test
+The script passed test without error.
+![CSS test result](readme-img/css_test.png)
+#### Javascript test
+All script have been tested without important error.
+![JS test result](readme-img/js_test.png)
+#### LightHouse
+Lighthouse in Chrome Dev Tools have been used for test the performance of the website.
+![lighthouse result](readme-img/lighthouse_mp2.png)
 ### **Unfixed Bugs**
-Some offset issues still extist, but I have try my best to solve it.
+Maybe some offset issues still extist, but I have try my best to solve it.
 
 ## **Deployment**
 The website use git for version control, and deploy in Github by following step:
