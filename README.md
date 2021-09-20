@@ -100,6 +100,7 @@ The script passed test without error.
 ![CSS test result](readme-img/css_test.png)
 #### Javascript test
 All script have been tested without important error.
+This testing assume the script using the ES6 feature.
 ![JS test result](readme-img/js_test.png)
 #### LightHouse
 Lighthouse in Chrome Dev Tools have been used for test the performance of the website.
@@ -115,12 +116,12 @@ The website use git for version control, and deploy in Github by following step:
 * Git push command was used to push all committed changes to the GitHub repository.
 * When the website almost complete, I login to my GitHub Repository Setting page.
 * In the Page section I click the dropdown list under "Scource" and select "main".
-* At last I deploy the website after press the "Save" button.
+* After press the "Save" button, the website will be deploy.
 
 ## **Credit:**
 ### **Content**
 * https://quizizz.com/admin/quiz/5bacebf0def5440019d49e0f/world-of-warcraft-trivia-moderate-difficulty
-All the question in this game come from this quiz test.
+All the question in this game come from this quiz test. Some question and answer have been changed because of new patch and expansion.
 ### **Media**
 * https://www.reddit.com/r/wow/comments/906m3p/bfa_icon_for_wow/
 The icon shortcut in this website come from reddit.
@@ -134,8 +135,9 @@ I use this codepen work in my website when I'm stuck about CSS animation after a
 * Chrome Lighthouse and Chrome Developer Tools
 * HTML - W3C Validator
 * CSS - Jigsaw Validator
+* Git
 * Gitpod
 * Github
 
 ### **Acknowledgment**
-Again, another sincerely thanks to my mentor Daisy McGirr for all support and guidance in the process.
+Again, thanks to my mentor Daisy McGirr for all support and guidance in the process.
