@@ -100,12 +100,30 @@ All script have been tested without important error.
 The script passed test without error.
 ![CSS test result](readme-img/css_test.png)
 #### Javascript test
-All script have been tested without important error.
+All script have been tested without significant issues.
 This testing assume the script using the ES6 feature.
+But there are still a warning in line: 310,
+I can put this keyword in those variable for pass the test,
+but it will disable the button because the script cannot find the DOM element.
 ![JS test result](readme-img/js_test.png)
 #### LightHouse
 Lighthouse in Chrome Dev Tools have been used for test the performance of the website.
 ![lighthouse result](readme-img/lighthouse_mp2.png)
+
+## **Bugs**
+### **Solved Bugs**
+* HTML tag (index.html line: 27 & 31)
+![html tag issue](readme-img/bug_1.png)
+The html validator spot an issue and said the div tag should not be the child of button.
+
+The solution is change <div> tag into <span> tag.
+* Responsive problems
+
+In the previous version, the footer are not correctly display on the bottom of the screen,
+
+or display on the bottom of the screen but covered the main content.
+
+At last with mentor's help, I use a solution from css-tricks.com to fix this problem.
 ### **Unfixed Bugs**
 Maybe some offset issues still extist, but I have try my best to solve it.
 
@@ -132,6 +150,10 @@ Through this turtorial I get the basic idea about how this game functional,
 It help me to make up my Idea to create my own quiz game.
 * https://codepen.io/ericwshea/pen/EyzZQg
 I use this codepen work in my website when I'm stuck about CSS animation after a new DOM added to the page.
+* https://www.w3schools.com/css/css_dropdowns.asp
+I learn from w3school for how to make a dropdown.
+* https://css-tricks.com/couple-takes-sticky-footer/
+The final solution to solve the responsive issues.
 ### **Tools**
 * Chrome Lighthouse and Chrome Developer Tools
 * HTML - W3C Validator
