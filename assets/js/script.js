@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <button id="startBtn" class="welcome">START</button>
         <button id="helpBtn">HOW TO PLAY
                 <div id="helpText">
-                Press the given button to choose your anwers.
+                Press the given button to choose your answers.
                 Or use 'A', 'B', 'C', 'D', 'Enter'<br>
                 on your keyboard to complete the quiz.
                 </div>

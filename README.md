@@ -19,10 +19,11 @@ The following website concluded two pages,
 A simply header shows the title to let user know what he will play.
 ##### **Welcome section**
 ![index.html screenshoot](readme-img/index_sc.png)
-The first part of script in handleWelcome() contain three elements:
+The first part of script in handleWelcome() contain four elements:
 * Label - a descriptive label to let user know what he should do.
 * Input field  - to let user input a username.
 * 'START' button -  to begin a new quiz.
+* 'HOW TO PLAY' button - when user hover on the button, the instruction will show up to let user know how to play.
 
 User can press the start button or press enter to begin a new game.
 
