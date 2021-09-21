@@ -11,11 +11,21 @@ a {
     text-decoration: none;
     color: inherit;
 }
-/* set defautl font-size and color*/
+/* set default font-size and color*/
+html, body {
+    height: 100%;
+}
+
 body {
     font-size: 1rem;
     font-family: 'VT323', monospace;
     color: #3a3a3a;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 /*animation*/
@@ -38,14 +48,12 @@ header{
     background-color: darkorange;
     border-bottom: 5px solid #3a3a3a;
     padding-bottom: 3%;
-    height: 140px;
     text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 3rem;
 }
 /*  style welcome-section  */
 #welcome-section {
-    height: 50%;
     width: 100%;
     text-align: center;
     font-size: 1.6rem;
@@ -190,11 +198,10 @@ header{
 }
 /*  style footer  */
 footer{
-    height: 80px;
     width: 100%;
     background-color: #3a3a3a;
     display: inline-flex;
-    position: fixed;
+    flex-shrink: 0;
     bottom: 0;
 }
 
@@ -290,7 +297,6 @@ footer h2 {
     }
     /*  fix footer  */
     footer {
-        height: 20%;
         flex-direction: column;
         text-align: center;
     }

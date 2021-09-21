@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
         //use another for loop add event listener (use for/in will loop one more time)
         let ansBtn = document.getElementsByClassName("answer");
         for(let i=0; i<ansBtn.length; i++){
-            ansBtn[i].addEventListener("click", () => {this.nextQuestion(this.ansBtn[this.i].id);});
+            ansBtn[i].addEventListener("click", () => {nextQuestion(ansBtn[i].id);});
         }
     }
     /**
@@ -414,11 +414,11 @@ document.addEventListener("DOMContentLoaded", function() {
         <input type="text" name="username" id="username" class="welcome" placeholder="Enter your name here">
         <button id="startBtn" class="welcome">START</button>
         <button id="helpBtn">HOW TO PLAY
-                <div id="helpText">
+                <span id="helpText">
                 Press the given button to choose your answers.
                 Or use 'A', 'B', 'C', 'D', 'Enter'<br>
                 on your keyboard to complete the quiz.
-                </div>
+                </span>
         </button>`;
        document.getElementById("startBtn").addEventListener("click", handleWelcome);
        document.addEventListener("keydown", enterKey);
