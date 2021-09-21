@@ -11,7 +11,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
-/* set default font-size and color*/
+/* set default font-size and color, and style the page in flex-box  */
 html, body {
     height: 100%;
 }
