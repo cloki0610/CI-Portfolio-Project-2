@@ -98,6 +98,7 @@ header{
     border-radius: 50px;
     position: relative;
     display: inline-block;
+    animation: expand .5s ease-in-out;
 }
 
 #helpText{
@@ -114,11 +115,16 @@ header{
     font-size: 1.3rem;
     bottom: 50px;
     left: 0;
+    animation: switch .5s;
 }
 
 #helpBtn:hover #helpText {
     display: inline-block;
-  }
+}
+
+#helpBtn:hover {
+    color: #fafafa;
+}
 
 /*  style the question section  */
 #question-section{
