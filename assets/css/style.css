@@ -38,7 +38,7 @@ header{
     background-color: darkorange;
     border-bottom: 5px solid #3a3a3a;
     padding-bottom: 3%;
-    height: 150px;
+    height: 140px;
     text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 3rem;
@@ -130,7 +130,6 @@ header{
 #question-section{
     text-align: center;
     box-sizing: border-box;
-    padding: 1%;
 }
 /*  style question and answer tag */
 #current-question {
