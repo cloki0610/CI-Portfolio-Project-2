@@ -246,10 +246,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         let helloUser = document.createElement("div");
         helloUser.id = "hello-user";
-        helloUser.innerHTML = `Nice to meet you, ${username.value}. Now try answer all the questions!`;
-        document.getElementById("username").remove();
-        document.getElementById("wel-msg").remove();
-        document.getElementById("startBtn").remove();
+        helloUser.innerHTML = `<p>Nice to meet you, ${username.value}. Now try answer all the questions!</p>`;
+        while(welcomeContainer.firstChild){
+            welcomeContainer.removeChild(welcomeContainer.firstChild);
+        }
         document.removeEventListener("keydown", enterKey);
         welcomeContainer.appendChild(helloUser);
         startQuiz();
@@ -411,8 +411,15 @@ document.addEventListener("DOMContentLoaded", function() {
        //display the welcome message and input column
        welcomeContainer.innerHTML = 
        `<h2 id="wel-msg" class="welcome"><label for="username">Enter your name and begin!</label></h2>
-       <input type="text" name="username" id="username" class="welcome" placeholder="Enter your name here">
-       <button id="startBtn" class="welcome">START</button>`;
+        <input type="text" name="username" id="username" class="welcome" placeholder="Enter your name here">
+        <button id="startBtn" class="welcome">START</button>
+        <button id="helpBtn">HOW TO PLAY
+                <div id="helpText">
+                Press the given button to choose your anwers.
+                Or use 'A', 'B', 'C', 'D', 'Enter'<br>
+                on your keyboard to complete the quiz.
+                </div>
+        </button>`;
        document.getElementById("startBtn").addEventListener("click", handleWelcome);
        document.addEventListener("keydown", enterKey);
    }

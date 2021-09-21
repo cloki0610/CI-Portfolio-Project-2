@@ -87,6 +87,39 @@ header{
     margin: 1%;
     animation: switch .5s;
 }
+/*  style the help button to turn it into a clickable dropdown  */
+#helpBtn{
+    font-size: 2.2rem;
+    font-family: 'VT323', monospace;
+    background-color: #3a3a3a;
+    color: darkorange;
+    width: 160px;
+    height: 80px;
+    border-radius: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+#helpText{
+    text-align: left;
+    width: 20%;
+    background-color: darkorange;
+    color: #3a3a3a;
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 15px;
+    font-size: 1.3rem;
+    bottom: 50px;
+    left: 0;
+}
+
+#helpBtn:hover #helpText {
+    display: inline-block;
+  }
+
 /*  style the question section  */
 #question-section{
     text-align: center;
